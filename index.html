@@ -3,22 +3,22 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>明治政変史 確認テスト</title>
+<title>生物基礎 確認テスト(遺伝子とその働き)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@500;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet" />
 <style>
 :root {
-  --paper: #efe7d3;
-  --sumi: #211d18;
-  --sumi-soft: #4a443b;
-  --ai: #1f3a5c;
-  --ai-light: #345680;
-  --shu: #ab3b26;
-  --gold: #9c7a3c;
-  --line: rgba(31, 58, 92, 0.16);
-  --ok: #2f5d3a;
-  --font-display: "Shippori Mincho", serif;
+  --paper: #eef3ee;
+  --sumi: #1c231f;
+  --sumi-soft: #4a534c;
+  --bio: #1f5c3a;
+  --bio-light: #2f7d51;
+  --heli: #b2542f;
+  --gold: #7a8c62;
+  --line: rgba(31, 92, 58, 0.14);
+  --ok: #1f5c3a;
+  --font-display: "Zen Old Mincho", serif;
   --font-body: "Zen Kaku Gothic New", sans-serif;
 }
 * { box-sizing: border-box; }
@@ -34,73 +34,73 @@ body {
 .page { min-height: 100%; display: flex; flex-direction: column; align-items: center; padding: 40px 18px 72px; }
 .doc-header { width: 100%; max-width: 720px; display: flex; justify-content: space-between; align-items: flex-end; padding: 0 4px 10px; border-bottom: 2px solid var(--sumi); margin-bottom: 30px; }
 .doc-header .no { font-size: 12px; letter-spacing: 0.08em; color: var(--sumi-soft); }
-.doc-header .brand { font-family: var(--font-display); font-weight: 800; font-size: 15px; letter-spacing: 0.14em; color: var(--ai); }
+.doc-header .brand { font-family: var(--font-display); font-weight: 800; font-size: 15px; letter-spacing: 0.14em; color: var(--bio); }
 .shell { width: 100%; max-width: 720px; }
-.cover { background: rgba(255,253,246,0.55); border: 1px solid var(--sumi); box-shadow: 6px 6px 0 rgba(31,58,92,0.08); padding: 46px 34px 38px; position: relative; overflow: hidden; }
+.cover { background: rgba(255,255,252,0.6); border: 1px solid var(--sumi); box-shadow: 6px 6px 0 rgba(31,92,58,0.1); padding: 46px 34px 38px; position: relative; overflow: hidden; }
 .cover::before { content: ""; position: absolute; inset: 8px; border: 1px solid var(--gold); opacity: 0.5; pointer-events: none; }
-.cover-eyebrow { font-size: 12px; letter-spacing: 0.35em; color: var(--shu); font-weight: 700; margin: 0 0 14px; }
-.cover h1 { font-family: var(--font-display); font-weight: 800; font-size: clamp(30px, 6vw, 44px); line-height: 1.35; margin: 0 0 8px; color: var(--sumi); }
-.cover .sub { font-family: var(--font-display); color: var(--ai); font-size: 15px; margin: 0 0 28px; letter-spacing: 0.04em; }
+.cover-eyebrow { font-size: 12px; letter-spacing: 0.35em; color: var(--heli); font-weight: 700; margin: 0 0 14px; }
+.cover h1 { font-family: var(--font-display); font-weight: 900; font-size: clamp(28px, 6vw, 42px); line-height: 1.4; margin: 0 0 8px; color: var(--sumi); }
+.cover .sub { font-family: var(--font-display); color: var(--bio); font-size: 15px; margin: 0 0 28px; letter-spacing: 0.04em; }
 .toc { border-top: 1px solid var(--sumi); border-bottom: 1px solid var(--sumi); padding: 14px 0; margin-bottom: 30px; }
-.toc-row { display: flex; align-items: baseline; gap: 14px; padding: 9px 2px; font-size: 14.5px; }
-.toc-row + .toc-row { border-top: 1px dashed rgba(31,58,92,0.25); }
-.toc-row .label { font-family: var(--font-display); font-weight: 700; color: var(--shu); min-width: 52px; }
+.toc-row { display: flex; align-items: baseline; gap: 14px; padding: 9px 2px; font-size: 14px; }
+.toc-row + .toc-row { border-top: 1px dashed rgba(31,92,58,0.25); }
+.toc-row .label { font-family: var(--font-display); font-weight: 700; color: var(--heli); min-width: 52px; }
 .toc-row .title { font-weight: 700; color: var(--sumi); }
-.toc-row .range { margin-left: auto; color: var(--sumi-soft); font-size: 12.5px; }
-.start-btn { display: inline-flex; align-items: center; gap: 10px; background: var(--ai); color: #fbf6e9; border: none; font-family: var(--font-display); font-weight: 700; font-size: 16px; letter-spacing: 0.08em; padding: 15px 30px; cursor: pointer; }
-.start-btn:hover { background: var(--ai-light); }
+.toc-row .range { margin-left: auto; color: var(--sumi-soft); font-size: 12px; }
+.start-btn { display: inline-flex; align-items: center; gap: 10px; background: var(--bio); color: #f3f6ef; border: none; font-family: var(--font-display); font-weight: 700; font-size: 16px; letter-spacing: 0.08em; padding: 15px 30px; cursor: pointer; }
+.start-btn:hover { background: var(--bio-light); }
 .meta-line { margin-top: 14px; font-size: 12.5px; color: var(--sumi-soft); }
-.progress-rail { display: flex; gap: 6px; margin-bottom: 18px; }
-.progress-seg { flex: 1; height: 6px; background: rgba(31,58,92,0.14); position: relative; overflow: hidden; }
-.progress-seg > span { position: absolute; inset: 0; background: var(--ai); transform-origin: left; transition: transform 0.35s ease; }
-.section-tag { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); color: var(--shu); font-weight: 700; font-size: 13px; letter-spacing: 0.12em; margin-bottom: 6px; }
+.progress-rail { display: flex; gap: 5px; margin-bottom: 18px; flex-wrap: wrap; }
+.progress-seg { flex: 1; min-width: 8px; height: 6px; background: rgba(31,92,58,0.14); position: relative; overflow: hidden; }
+.progress-seg > span { position: absolute; inset: 0; background: var(--bio); transform-origin: left; transition: transform 0.35s ease; }
+.section-tag { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); color: var(--heli); font-weight: 700; font-size: 12.5px; letter-spacing: 0.1em; margin-bottom: 6px; }
 .section-tag .count { margin-left: auto; font-family: var(--font-body); color: var(--sumi-soft); font-weight: 500; letter-spacing: 0; }
-.q-card { background: rgba(255,253,246,0.6); border: 1px solid var(--sumi); padding: 26px 24px 24px; position: relative; }
+.q-card { background: rgba(255,255,252,0.65); border: 1px solid var(--sumi); padding: 26px 24px 24px; position: relative; }
 .q-card::before { content: ""; position: absolute; inset: 6px; border: 1px solid var(--gold); opacity: 0.4; pointer-events: none; }
-.q-text { font-size: 17px; line-height: 1.75; font-weight: 700; margin: 0 0 20px; color: var(--sumi); }
+.q-text { font-size: 16.5px; line-height: 1.75; font-weight: 700; margin: 0 0 20px; color: var(--sumi); }
 .options { display: flex; flex-direction: column; gap: 10px; margin-bottom: 4px; }
-.opt-btn { text-align: left; font-family: var(--font-body); font-size: 15px; background: transparent; border: 1.5px solid rgba(31,58,92,0.35); padding: 13px 16px; cursor: pointer; display: flex; gap: 12px; align-items: center; width: 100%; }
-.opt-btn .tag { font-family: var(--font-display); font-weight: 700; color: var(--ai); min-width: 18px; }
-.opt-btn:hover:not(:disabled) { border-color: var(--ai); background: rgba(31,58,92,0.05); }
-.opt-btn.correct { border-color: var(--ok); background: rgba(47,93,58,0.1); }
-.opt-btn.wrong { border-color: var(--shu); background: rgba(171,59,38,0.08); }
+.opt-btn { text-align: left; font-family: var(--font-body); font-size: 15px; background: transparent; border: 1.5px solid rgba(31,92,58,0.3); padding: 13px 16px; cursor: pointer; display: flex; gap: 12px; align-items: center; width: 100%; }
+.opt-btn .tag { font-family: var(--font-display); font-weight: 700; color: var(--bio); min-width: 18px; }
+.opt-btn:hover:not(:disabled) { border-color: var(--bio); background: rgba(31,92,58,0.05); }
+.opt-btn.correct { border-color: var(--ok); background: rgba(31,92,58,0.12); }
+.opt-btn.wrong { border-color: var(--heli); background: rgba(178,84,47,0.08); }
 .opt-btn:disabled { cursor: default; opacity: 0.75; }
 .text-input-row { display: flex; gap: 10px; margin-bottom: 4px; }
-.text-input-row input { flex: 1; font-family: var(--font-body); font-size: 15px; padding: 13px 14px; border: 1.5px solid rgba(31,58,92,0.35); background: #fffdf6; }
+.text-input-row input { flex: 1; font-family: var(--font-body); font-size: 15px; padding: 13px 14px; border: 1.5px solid rgba(31,92,58,0.3); background: #fffefb; }
 .submit-btn { font-family: var(--font-display); font-weight: 700; background: var(--sumi); color: var(--paper); border: none; padding: 0 22px; cursor: pointer; }
 .submit-btn:disabled { opacity: 0.4; cursor: default; }
 .feedback { margin-top: 18px; display: flex; gap: 16px; align-items: flex-start; }
-.stamp { flex-shrink: 0; width: 58px; height: 58px; border-radius: 50%; border: 3px solid var(--shu); color: var(--shu); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 800; font-size: 15px; letter-spacing: 0.05em; transform: rotate(-14deg) scale(0); animation: stamp-in 0.35s cubic-bezier(0.34,1.56,0.64,1) forwards; }
-.stamp.miss { border-color: var(--sumi); color: var(--sumi); border-style: double; }
+.stamp { flex-shrink: 0; width: 56px; height: 56px; border-radius: 50%; border: 3px solid var(--heli); color: var(--heli); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 800; font-size: 14px; letter-spacing: 0.05em; transform: rotate(-14deg) scale(0); animation: stamp-in 0.35s cubic-bezier(0.34,1.56,0.64,1) forwards; }
+.stamp.ok { border-color: var(--ok); color: var(--ok); }
 @keyframes stamp-in { to { transform: rotate(-14deg) scale(1); } }
-.explain { flex: 1; font-size: 14px; line-height: 1.75; color: var(--sumi-soft); padding-top: 4px; }
+.explain { flex: 1; font-size: 13.5px; line-height: 1.75; color: var(--sumi-soft); padding-top: 4px; }
 .explain strong { color: var(--sumi); }
 .next-row { margin-top: 22px; display: flex; justify-content: flex-end; }
-.next-btn { font-family: var(--font-display); font-weight: 700; background: var(--ai); color: #fbf6e9; border: none; padding: 12px 24px; cursor: pointer; letter-spacing: 0.06em; }
-.next-btn:hover { background: var(--ai-light); }
-.result-card { background: rgba(255,253,246,0.6); border: 1px solid var(--sumi); padding: 40px 30px 30px; text-align: center; position: relative; }
+.next-btn { font-family: var(--font-display); font-weight: 700; background: var(--bio); color: #f3f6ef; border: none; padding: 12px 24px; cursor: pointer; letter-spacing: 0.06em; }
+.next-btn:hover { background: var(--bio-light); }
+.result-card { background: rgba(255,255,252,0.65); border: 1px solid var(--sumi); padding: 40px 30px 30px; text-align: center; position: relative; }
 .result-card::before { content: ""; position: absolute; inset: 7px; border: 1px solid var(--gold); opacity: 0.45; pointer-events: none; }
-.big-stamp { width: 118px; height: 118px; margin: 0 auto 18px; border-radius: 50%; border: 5px solid var(--shu); color: var(--shu); display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: var(--font-display); transform: rotate(-10deg) scale(0); animation: stamp-in 0.5s cubic-bezier(0.34,1.56,0.64,1) forwards; }
-.big-stamp .score { font-size: 30px; font-weight: 800; line-height: 1; }
-.big-stamp .of { font-size: 12px; margin-top: 2px; }
-.result-msg { font-family: var(--font-display); font-size: 20px; font-weight: 700; margin: 0 0 6px; }
-.result-sub { font-size: 13.5px; color: var(--sumi-soft); margin: 0 0 28px; }
+.big-stamp { width: 114px; height: 114px; margin: 0 auto 18px; border-radius: 50%; border: 5px solid var(--bio); color: var(--bio); display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: var(--font-display); transform: rotate(-10deg) scale(0); animation: stamp-in 0.5s cubic-bezier(0.34,1.56,0.64,1) forwards; }
+.big-stamp .score { font-size: 28px; font-weight: 800; line-height: 1; }
+.big-stamp .of { font-size: 11px; margin-top: 2px; }
+.result-msg { font-family: var(--font-display); font-size: 19px; font-weight: 700; margin: 0 0 6px; }
+.result-sub { font-size: 13px; color: var(--sumi-soft); margin: 0 0 28px; }
 .section-scores { text-align: left; border-top: 1px solid var(--sumi); padding-top: 20px; margin-bottom: 26px; }
-.sec-score-row { display: flex; align-items: center; gap: 12px; font-size: 13.5px; padding: 8px 0; }
-.sec-score-row .name { font-family: var(--font-display); font-weight: 700; min-width: 170px; }
-.sec-score-row .bar { flex: 1; height: 8px; background: rgba(31,58,92,0.12); position: relative; }
-.sec-score-row .bar > span { position: absolute; inset: 0; background: var(--ai); }
+.sec-score-row { display: flex; align-items: center; gap: 12px; font-size: 13px; padding: 8px 0; }
+.sec-score-row .name { font-family: var(--font-display); font-weight: 700; min-width: 150px; }
+.sec-score-row .bar { flex: 1; height: 8px; background: rgba(31,92,58,0.12); position: relative; }
+.sec-score-row .bar > span { position: absolute; inset: 0; background: var(--bio); }
 .sec-score-row .val { min-width: 40px; text-align: right; color: var(--sumi-soft); }
 .review-list { text-align: left; border-top: 1px solid var(--sumi); padding-top: 20px; }
-.review-item { padding: 14px 0; border-bottom: 1px dashed rgba(31,58,92,0.25); font-size: 13.5px; line-height: 1.7; }
+.review-item { padding: 14px 0; border-bottom: 1px dashed rgba(31,92,58,0.25); font-size: 13px; line-height: 1.7; }
 .review-item .q { font-weight: 700; margin-bottom: 4px; }
-.review-item .your { color: var(--shu); }
+.review-item .your { color: var(--heli); }
 .review-item .right { color: var(--ok); }
 .retry-btn { margin-top: 26px; font-family: var(--font-display); font-weight: 700; background: var(--sumi); color: var(--paper); border: none; padding: 13px 26px; cursor: pointer; }
-.retry-btn:hover { background: #35302a; }
+.retry-btn:hover { background: #2c352e; }
 .foot-note { text-align: center; font-size: 11.5px; color: var(--sumi-soft); margin-top: 26px; letter-spacing: 0.04em; }
 @media (max-width: 480px) {
-  .q-card, .cover, .result-card { padding: 24px 16px 20px; }
+  .q-card, .cover, .result-card { padding: 22px 16px 20px; }
   .toc-row .range { display: none; }
 }
 </style>
@@ -108,8 +108,8 @@ body {
 <body>
 <div class="page">
   <div class="doc-header">
-    <span class="no">確認テスト・No. 05</span>
-    <span class="brand">日本史 近代史ノート</span>
+    <span class="no">生物基礎・確認テスト</span>
+    <span class="brand">遺伝子とその働き</span>
   </div>
   <div class="shell" id="app"></div>
   <p class="foot-note" id="footNote"></p>
@@ -118,46 +118,51 @@ body {
 <script>
 // ---------- 問題データ ----------
 const sections = [
-  { id: "bakumatsu", label: "第一章", title: "幕末の動乱", range: "ペリー来航 〜 王政復古の大号令" },
-  { id: "seifu", label: "第二章", title: "明治政府の発足", range: "戊辰戦争 〜 地租改正" },
-  { id: "seihen", label: "第三章", title: "明治六年の政変と士族反乱", range: "征韓論 〜 西南戦争" },
-  { id: "kenpou", label: "第四章", title: "自由民権運動と憲法発布", range: "明治十四年の政変 〜 大日本帝国憲法" },
+  { id: "keishitsu", label: "第1章", title: "遺伝子の本体の発見", range: "グリフィス〜ハーシーとチェイス" },
+  { id: "kouzou", label: "第2章", title: "DNAの構造", range: "ヌクレオチド〜シャルガフの規則" },
+  { id: "fukusei", label: "第3章", title: "複製・染色体・ゲノム", range: "半保存的複製〜ゲノム" },
+  { id: "shuki", label: "第4章", title: "細胞周期と体細胞分裂", range: "G1・S・G2・M期〜分裂の過程" },
+  { id: "tensha", label: "第5章", title: "転写・翻訳とセントラルドグマ", range: "コドン〜遺伝子発現" },
 ];
 
 const questions = [
-  { section: "bakumatsu", type: "mc", q: "1854年に結ばれ、日本を開国させたが貿易は認めなかった条約は?", options: ["日米修好通商条約", "日米和親条約", "日米通商航海条約", "下関条約"], answer: 1, explain: "日米和親条約(1854年)は開国のみで貿易は認めなかった。貿易まで認めたのは1858年の日米修好通商条約。" },
-  { section: "bakumatsu", type: "text", q: "日米修好通商条約を大老として無勅許で調印し、桜田門外の変で暗殺された人物は誰?", answer: ["井伊直弼", "いいなおすけ"], explain: "井伊直弼は無勅許調印への反対派(尊王攘夷派)を弾圧(安政の大獄)したが、桜田門外の変で暗殺された。" },
-  { section: "bakumatsu", type: "mc", q: "朝廷と幕府が協力する体制を何と呼ぶか?(薩摩・会津が中心)", options: ["尊王攘夷", "公武合体", "大政奉還", "王政復古"], answer: 1, explain: "公武合体は朝廷(公)と幕府(武)が協力する体制。天皇中心で外国を追い払おうとする長州中心の考えは尊王攘夷。" },
-  { section: "bakumatsu", type: "mc", q: "薩長同盟が結ばれるきっかけとなった出来事は?", options: ["薩長芸が外国と戦い攘夷をあきらめた", "桜田門外の変", "五稜郭の戦い", "地租改正反対一揆"], answer: 0, explain: "薩長(芸)は実際に外国と戦って攘夷の困難さを痛感し、討幕へ方針転換して薩長同盟を結んだ。" },
-  { section: "bakumatsu", type: "text", q: "1867年10月14日、徳川慶喜が政権を朝廷に返上したことを何というか?", answer: ["大政奉還"], explain: "同日、討幕派(薩長・岩倉)は討幕の密勅を得ていた。大政奉還のあと王政復古の大号令が出される。" },
-  { section: "bakumatsu", type: "mc", q: "王政復古の大号令の後、旧幕府派が新政府に対して起こした一連の戦いは?", options: ["西南戦争", "戊辰戦争", "秩父事件", "萩の乱"], answer: 1, explain: "徳川慶喜への辞官納地に旧幕府派が反発し、戊辰戦争(鳥羽・伏見の戦い〜五稜郭の戦い)に発展した。" },
+  { section: "keishitsu", type: "mc", q: "グリフィスの実験(1928年)で、加熱殺菌したS型菌と生きたR型菌を混ぜてネズミに注射したところ何が起きたか?", options: ["ネズミは無事だった", "ネズミが肺炎で死に、体内から生きたS型菌が見つかった", "R型菌が全て死滅した", "S型菌とR型菌が融合して新種になった"], answer: 1, explain: "加熱殺菌したS型菌の何らかの物質によってR型菌がS型菌に変化する「形質転換」が起こり、ネズミは肺炎で死んだ。" },
+  { section: "keishitsu", type: "text", q: "ある物質によって生物の形や性質が変化する現象を何というか。", answer: ["形質転換"], explain: "グリフィスが発見した現象で、後にエイブリーらがその物質の正体を探究した。" },
+  { section: "keishitsu", type: "mc", q: "1944年、エイブリーらの実験でS型菌の抽出物をDNA分解酵素で処理すると形質転換は起きたか?", options: ["起きた", "起こらなかった", "R型菌が死滅した", "S型菌が増殖した"], answer: 1, explain: "DNA分解酵素で処理すると形質転換は起こらなかった一方、タンパク質分解酵素で処理しても形質転換は起きたことから、形質転換物質がDNAであることが示された。" },
+  { section: "keishitsu", type: "text", q: "肺炎双球菌のS型菌とR型菌の病原性の違いは何の有無によるか。", answer: ["被膜"], explain: "S型菌は被膜があり病原性、R型菌は被膜が無く非病原性である。" },
+  { section: "keishitsu", type: "mc", q: "1952年、ハーシーとチェイスがT2ファージを用いた実験で明らかにしたことは?", options: ["遺伝子の本体はタンパク質である", "遺伝子の本体はDNAであり、タンパク質ではない", "ファージには遺伝物質が存在しない", "DNAとタンパク質はどちらも遺伝物質である"], answer: 1, explain: "DNAとタンパク質を別々に標識して大腸菌に感染させる実験により、細菌に感染し増殖に関わるのはDNAであることを証明した。" },
+  { section: "keishitsu", type: "text", q: "ハーシーとチェイスが実験に用いた、細菌に感染するウイルスを何というか。", answer: ["バクテリオファージ", "ファージ"], explain: "バクテリオファージ(ファージ)はDNAとタンパク質の殻からできている。" },
 
-  { section: "seifu", type: "mc", q: "戊辰戦争で、勝海舟と西郷隆盛の交渉により実現したことは?", options: ["会津若松の落城", "江戸城無血開城", "五稜郭の戦い", "奥羽越列藩同盟結成"], answer: 1, explain: "勝海舟と西郷隆盛の会談により江戸城は無血開城され、江戸での戦闘は回避された。" },
-  { section: "seifu", type: "text", q: "戊辰戦争の最後の戦い(函館)で榎本武揚が降伏した戦いは何の戦い?", answer: ["五稜郭の戦い", "五稜郭"], explain: "五稜郭の戦いをもって戊辰戦争は終結した。" },
-  { section: "seifu", type: "mc", q: "新政府の基本方針として、公議世論の尊重・開国和親などを示したものは?", options: ["五榜の掲示", "五箇条の誓文", "政体書", "教育勅語"], answer: 1, explain: "五箇条の誓文は新政府の基本方針。一方、五榜の掲示は徒党・強訴やキリスト教の禁止など国民統制の方針。" },
-  { section: "seifu", type: "mc", q: "版籍奉還で「版」「籍」が指すものの組み合わせとして正しいのは?", options: ["版=領民、籍=領地", "版=領地、籍=領民", "版=軍隊、籍=財政", "版=戸籍、籍=土地台帳"], answer: 1, explain: "版籍奉還は「版(領地)」と「籍(領民)」を藩主が天皇に返還したもの。旧藩主は知藩事に任命され家禄を支給された。" },
-  { section: "seifu", type: "text", q: "版籍奉還の後、藩を廃止して県を置き中央集権体制を確立した政策は?", answer: ["廃藩置県"], explain: "廃藩置県により知藩事は罷免され、中央から府知事・県令が任命されるようになった(薩長土の御親兵が背景)。" },
-  { section: "seifu", type: "mc", q: "「四民平等」の内容として正しいものは?", options: ["士農工商を廃止し、華族・士族・平民とした", "参政権をすべての成人男女に与えた", "地租を全国一律3%とした", "徴兵告諭により兵役を免除した"], answer: 0, explain: "四民平等では士農工商を廃止して華族・士族・平民に再編し、えた・非人も(実際には「新平民」として)廃止、苗字も許可された。" },
-  { section: "seifu", type: "mc", q: "徴兵令(フランス式)の国民皆兵原則の内容は?", options: ["満18歳の男子に2年間の兵役", "満20歳の男子に3年間の兵役", "満25歳以上の戸主のみに兵役", "士族のみを対象とした兵役"], answer: 1, explain: "満20歳の男子に3年間の兵役を課す国民皆兵原則。ただし戸主・長男・官吏・学生・代人料270円の納入者などは免役規定があった。" },
-  { section: "seifu", type: "text", q: "1873年、課税基準を収穫高から地価に変更し、金納とした改革は?", answer: ["地租改正"], explain: "地租改正条例(1873)により、税率は地価の3%、地券所有者が納税者とされた。" },
+  { section: "kouzou", type: "text", q: "DNAの鎖を構成する基本単位を何というか。", answer: ["ヌクレオチド"], explain: "ヌクレオチドは糖・塩基・リン酸の3つの物質で構成されている。" },
+  { section: "kouzou", type: "mc", q: "DNAのヌクレオチドを構成する糖は何か?", options: ["リボース", "デオキシリボース", "グルコース", "スクロース"], answer: 1, explain: "DNAの糖はデオキシリボース。RNAの糖はリボースである点と区別する。" },
+  { section: "kouzou", type: "mc", q: "DNAの4種類の塩基のうち、互いに結合しやすい(相補的な)組み合わせとして正しいのは?", options: ["AとG、TとC", "AとT、GとC", "AとC、TとG", "全ての塩基が互いに結合する"], answer: 1, explain: "塩基の相補性により、AとT、GとCがそれぞれ結合しやすい。片方の鎖の塩基配列が決まれば、もう片方の鎖の塩基配列も決まる。" },
+  { section: "kouzou", type: "text", q: "1953年にDNAの二重らせん構造を提唱した2人の科学者は誰と誰か。", answer: ["ワトソンとクリック"], explain: "ワトソンとクリックは、ウィルキンスとフランクリンのX線回折写真などの研究結果をもとに二重らせん構造モデルを提唱した。" },
+  { section: "kouzou", type: "mc", q: "シャルガフの規則(1949年)の内容として正しいものは?", options: ["Aの割合は常にCの割合と等しい", "AとT、GとCの割合が生物によらずほぼ等しい", "DNAの塩基は生物種によらず同じ配列である", "塩基の割合は年齢によって変化する"], answer: 1, explain: "シャルガフの規則により、DNAを構成する塩基のAとT、GとCの割合は生物によらずほぼ等しいことが示された。" },
 
-  { section: "seihen", type: "mc", q: "明治六年の政変(1873)で対立した2派の組み合わせとして正しいのは?", options: ["征韓派(西郷)vs 内治派(大久保)", "尊王派(西郷)vs 佐幕派(大久保)", "討幕派(西郷)vs 公武合体派(大久保)", "開国派(西郷)vs 攘夷派(大久保)"], answer: 0, explain: "武力で朝鮮を開国させようとする征韓派(西郷隆盛ら)と、国内優先の内治派(大久保利通)が対立し、内治派が主導権を握った。" },
-  { section: "seihen", type: "text", q: "明治六年の政変で下野した後、板垣退助・後藤象二郎・江藤新平・副島種臣が提出し、国会開設を求めたものは?", answer: ["民撰議院設立の建白書", "民撰議院設立建白書"], explain: "大久保中心の専制政治を非難し、国会開設を要求。これが自由民権運動へとつながっていく。" },
-  { section: "seihen", type: "mc", q: "大久保利通・板垣退助・木戸孝允が会談し、立憲制への漸進方針を確認した会議は?", options: ["大阪会議", "御前会議", "岩倉使節団会議", "五箇条会議"], answer: 0, explain: "大阪会議で漸次立憲政体樹立の詔が出される一方、讒謗律・新聞紙条例という言論弾圧策も同時に取られた。" },
-  { section: "seihen", type: "mc", q: "秩禄処分の内容として正しいものは?", options: ["秩禄を廃止し、金禄公債証書による一時金を支給した", "秩禄を倍増し、士族の生活を保障した", "秩禄を地租に置き換えて毎年支給し続けた", "秩禄処分は行われず、廃刀令のみが実施された"], answer: 0, explain: "秩禄(国家予算の3〜4割を占めた)を廃止し金禄公債証書で一時金を支給。廃刀令も重なり士族の反乱を招いた。" },
-  { section: "seihen", type: "mc", q: "秩禄処分・廃刀令に反発した不平士族の反乱に該当しないものは?", options: ["敬神党の乱(熊本)", "秋月の乱(福岡県)", "萩の乱(山口)", "生野の変"], answer: 3, explain: "敬神党の乱・秋月の乱・萩の乱、そして最大規模の西南戦争(鹿児島)が不平士族の反乱にあたる。生野の変は幕末の事件。" },
-  { section: "seihen", type: "text", q: "士族最大の反乱で、敗れた西郷隆盛が自刃した戦いは?", answer: ["西南戦争"], explain: "西南戦争(鹿児島)の敗北により士族の武力反抗は終結し、以後の反政府運動は自由民権運動という言論の形をとるようになった。" },
+  { section: "fukusei", type: "mc", q: "DNAの複製で、2本鎖が1本ずつに分離し、それぞれを鋳型として新しい鎖が合成される複製様式を何というか?", options: ["全保存的複製", "半保存的複製", "分散的複製", "非対称複製"], answer: 1, explain: "DNAが2本鎖に分離し、それぞれの鎖の塩基の相補性を利用して新しい鎖が合成される方式を半保存的複製という。" },
+  { section: "fukusei", type: "text", q: "生命活動に必要なすべての遺伝情報を含んだDNAの1組を何というか。", answer: ["ゲノム"], explain: "ゲノムは「遺伝子の領域」と「遺伝子以外の領域」からなり、ヒトでは遺伝子の領域は全体の約1.5%にすぎない。" },
+  { section: "fukusei", type: "mc", q: "ヒトの体細胞に含まれる染色体の本数と、その内訳として正しいものは?", options: ["23本(父親由来のみ)", "46本(父親由来23本+母親由来23本)", "92本(父親由来46本+母親由来46本)", "23本(母親由来のみ)"], answer: 1, explain: "ヒトの体細胞には父親由来23本、母親由来23本の計46本の染色体が存在し、2組のゲノムをもつ。" },
+  { section: "fukusei", type: "text", q: "形や大きさが同じで、一方が父親由来、他方が母親由来である染色体の組を何というか。", answer: ["相同染色体"], explain: "ヒトの体細胞の染色体46本は23対の相同染色体からなる。" },
+  { section: "fukusei", type: "mc", q: "ヒトの遺伝子はおよそ何個あるとされるか?", options: ["約2,000個", "約20,000個", "約200,000個", "約2,000,000個"], answer: 1, explain: "ヒトの遺伝子は約20,000個。ヒトゲノム全体は約30億塩基対からなる。" },
+  { section: "fukusei", type: "mc", q: "分裂によって生じた細胞が特定の形やはたらきをもつようになることを何というか?", options: ["分化(細胞分化)", "受精", "転写", "半保存的複製"], answer: 0, explain: "細胞分化した細胞は、いずれも基本的に同じゲノムをもつが、細胞ごとに発現する遺伝子が異なるため、異なる形やはたらきをもつようになる。" },
 
-  { section: "kenpou", type: "mc", q: "1881年の「明治十四年の政変」で起きたことは?", options: ["伊藤博文が大隈重信を追放し、十年後の国会開設を公約した", "大隈重信が伊藤博文を追放し、憲法制定を撤回した", "西郷隆盛が政界に復帰した", "廃藩置県が撤回された"], answer: 0, explain: "伊藤博文が大隈重信を政府から追放し、十年後(1890年)の国会開設を公約した政変。" },
-  { section: "kenpou", type: "text", q: "大日本帝国憲法が発布されたのは西暦何年何月何日?(年月日で)", answer: ["1889年2月11日", "1889/2/11", "2月11日"], explain: "1889年2月11日(紀元節)に発布された。起草の中心は伊藤博文ら。" },
-  { section: "kenpou", type: "text", q: "大日本帝国憲法起草の中心人物で、初代内閣総理大臣も務めた人物は?", answer: ["伊藤博文", "いとうひろぶみ"], explain: "伊藤博文は憲法起草の中心人物であり、初代内閣総理大臣でもある。" },
-  { section: "kenpou", type: "mc", q: "伊藤博文が大日本帝国憲法第四条を重要視した理由として適切なのは?", options: ["天皇の権力を無制限にするため", "天皇は憲法に定められていないことは実行できないとし、国家権力を制限して立憲君主制の根本を定めるため", "国会の権限を天皇より優先させるため", "外国との条約締結権を天皇から奪うため"], answer: 1, explain: "天皇の統治権も憲法の枠内に置くという国家権力の制限=立憲君主制の根本を明確にする条文だったため重要視された。" },
+  { section: "shuki", type: "mc", q: "細胞周期のうち、DNAの複製(合成)が行われる時期はどれか?", options: ["G1期", "S期", "G2期", "M期"], answer: 1, explain: "S期(DNA合成準備期)でDNAが複製される。G1期はDNA合成準備の時期、G2期は分裂準備の時期である。" },
+  { section: "shuki", type: "text", q: "分裂を停止して間期にとどまる時期を何というか。", answer: ["G0期"], explain: "再生中の肝細胞など、細胞分裂を外れてG0期(静止期)に入る場合もある。" },
+  { section: "shuki", type: "mc", q: "体細胞分裂の過程で、染色体が細胞の中央(赤道面)に並ぶのはどの時期か?", options: ["前期", "中期", "後期", "終期"], answer: 1, explain: "前期に染色体が凝縮して出現し、中期に赤道面に並び、後期に両極へ移動し、終期に核膜が再形成される。" },
+  { section: "shuki", type: "text", q: "植物細胞の体細胞分裂の終期に、2つの娘細胞に分かれる際に形成される構造は何か。", answer: ["細胞板"], explain: "動物細胞では細胞質のくびれによって分裂するのに対し、植物細胞では細胞板の形成によって2つの娘細胞に分かれる。" },
+  { section: "shuki", type: "mc", q: "細胞1個あたりのDNA量は、G1期を1とすると、G2期・M期ではおよそどうなるか?", options: ["0.5", "1(変化しない)", "2", "4"], answer: 2, explain: "S期でDNA量が2倍に増加し、G2期・M期はその状態(2)を保つ。分裂終期に2つの娘細胞に等しく分配されて再び1に戻る。" },
+
+  { section: "tensha", type: "mc", q: "遺伝情報がDNA→RNA→タンパク質の順に一方向に流れるという原則を何というか?", options: ["セントラルドグマ", "半保存的複製", "形質転換", "シャルガフの規則"], answer: 0, explain: "DNAの遺伝情報がRNA(転写)を経てタンパク質(翻訳)に一方向に流れる原則をセントラルドグマという。" },
+  { section: "tensha", type: "text", q: "DNAの遺伝情報がmRNAに写し取られる過程を何というか。", answer: ["転写"], explain: "DNAの2本鎖の一部がほどけ、塩基の相補性にもとづいてRNAのヌクレオチドが結合し、mRNAがつくられる。" },
+  { section: "tensha", type: "text", q: "mRNAの塩基配列がアミノ酸配列に変換される過程を何というか。", answer: ["翻訳"], explain: "mRNAの塩基3つの並び方(コドン)が1つのアミノ酸を指定し、tRNAがアミノ酸を運んでタンパク質が合成される。" },
+  { section: "tensha", type: "mc", q: "mRNAの塩基3つの組み合わせでアミノ酸を指定する暗号を何というか?", options: ["アンチコドン", "コドン", "ゲノム", "ヌクレオチド"], answer: 1, explain: "コドンはmRNAのトリプレット(塩基3つの組)であり、1つのコドンが1つのアミノ酸を指定する。" },
+  { section: "tensha", type: "text", q: "翻訳の開始を指定するコドン(開始コドン)は何か。塩基配列で答えよ。", answer: ["AUG"], explain: "開始コドンはAUGで、メチオニンを指定する。終止コドンにはUAA・UAG・UGAがある。" },
+  { section: "tensha", type: "mc", q: "RNAを構成する塩基のうち、DNAには無くRNAだけに含まれるものはどれか?", options: ["アデニン(A)", "グアニン(G)", "ウラシル(U)", "シトシン(C)"], answer: 2, explain: "DNAの塩基はA・T・G・C、RNAの塩基はA・U・G・Cであり、TのかわりにU(ウラシル)を含む。" },
 ];
 
 const KANA = ["A", "B", "C", "D"];
-document.getElementById("footNote").textContent = "明治維新〜大日本帝国憲法発布 / 全" + questions.length + "問";
+document.getElementById("footNote").textContent = "生物基礎「遺伝子とその働き」確認テスト / 全" + questions.length + "問";
 
-// ---------- 状態 ----------
 let qIndex = 0;
 let answers = [];
 let revealed = false;
@@ -166,7 +171,7 @@ let selectedIdx = null;
 function normalize(str) {
   return str.trim().replace(/\s+/g, "")
     .replace(/[０-９]/g, c => String.fromCharCode(c.charCodeAt(0) - 0xfee0))
-    .toLowerCase();
+    .toUpperCase();
 }
 function sectionMeta(id) { return sections.find(s => s.id === id); }
 function esc(s) {
@@ -181,9 +186,9 @@ function renderCover() {
   ).join("");
   app.innerHTML = `
     <div class="cover">
-      <p class="cover-eyebrow">教科書 P48〜53 準拠</p>
-      <h1>明治政変史<br>確認テスト</h1>
-      <p class="sub">幕末の動乱から大日本帝国憲法発布まで、全${questions.length}問</p>
+      <p class="cover-eyebrow">生物基礎 第1編 第2章</p>
+      <h1>遺伝子とその働き<br>確認テスト</h1>
+      <p class="sub">形質転換の発見からセントラルドグマまで、全${questions.length}問</p>
       <div class="toc">${toc}</div>
       <button class="start-btn" id="startBtn">テストを始める →</button>
       <p class="meta-line">一問ずつ回答し、その場で正誤と解説が表示されます。</p>
@@ -227,7 +232,7 @@ function renderQuiz() {
     const last = answers[answers.length - 1];
     feedback = `
       <div class="feedback">
-        <div class="stamp${last.correct ? "" : " miss"}">${last.correct ? "正解" : "不正解"}</div>
+        <div class="stamp${last.correct ? " ok" : ""}">${last.correct ? "正解" : "不正解"}</div>
         <p class="explain">${!last.correct ? `正解: <strong>${esc(last.right)}</strong><br>` : ""}${esc(q.explain)}</p>
       </div>
       <div class="next-row"><button class="next-btn" id="nextBtn">${qIndex + 1 >= total ? "結果を見る →" : "次の問題 →"}</button></div>`;
